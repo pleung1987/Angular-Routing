@@ -1,0 +1,11 @@
+<div class="container">
+  <form (submit)="mine()">
+    <p> <b> Question:</b> {{randQuestion}}</p>
+    <!-- <h4>answer: {{randAnswer}}</h4> -->
+    <!-- <p>random num: {{randNum}}</p> -->
+    <input type="number" name="newNum" [(ngModel)]="newNum">
+    <input type="submit" value="Mine">
+    <p *ngIf='incorrect' style="color:red">{{message}}</p>
+    <p *ngIf='correct' style="color:green">{{message}}</p>
+  </form> 
+</div>

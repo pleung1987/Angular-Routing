@@ -1,0 +1,11 @@
+<div>
+    <h2>Sell ShintoCoins</h2>
+    <h4>Current Shinto Value: ${{numbers}}.00</h4>
+    <h4>Number of ShintoCoins Owned: {{coins}}</h4>
+    <form (submit)='sell()'>
+        <input type="number" name="sellNum" [(ngModel)]="sellNum">
+        <button type="submit">Sell</button>
+    </form> 
+    <p *ngIf='insufficient' style="color:red">{{message}}</p>
+  </div>
+  

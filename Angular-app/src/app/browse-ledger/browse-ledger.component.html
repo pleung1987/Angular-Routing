@@ -1,0 +1,29 @@
+<div>
+    <h2>Browse the Ledger</h2>
+    <h4>Here you can browse all ShintoCoin Transactions.</h4>
+    
+   
+    <th style="position:center">ShintoCoin Ledger:</th>
+    <table style="width:80%; border:2px solid black;">
+      <tr>
+          <th>Action</th>
+          <th>Amount</th>
+          <th>Value</th>
+          <th> detail...</th>
+      </tr>
+      <tr *ngFor="let transaction of transactions">
+          <td>{{transaction.action}}</td>
+          <td>{{transaction.amount}}</td>
+          <td>{{transaction.value}}</td>
+          <td><button (click)="getTransDetails(transaction.transId)">Detail</button></td>
+      </tr>
+    </table>
+    <div *ngIf= 'detailPressed'>
+      <h1>Ledger Transaction Detail:</h1>
+      <p>Detailed view of transaction from the ledger.</p>
+      <p>Transaction# <b>{{detail.transNumber}}</b></p>
+      <p><b>{{detail.action}}</b> ShintoCoin</p>
+
+    </div>
+  </div>
+  
